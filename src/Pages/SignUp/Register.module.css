@@ -1,0 +1,115 @@
+.Container{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width:60vw;
+    margin-left:20ch;
+    border: 0.5ch white;
+    border-style:ridge;
+    
+    
+}
+
+.Column1{
+    display: flex;
+    flex-direction: column;
+    width: 32vw;
+    justify-content: space-between;
+    
+}
+.Column2{
+    display: flex;
+    flex-direction:column;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.img{
+    width:11vw;
+    height:25vh;
+    margin-left:3cm; 
+}
+
+.imageset{
+    margin-left:6mm;
+}
+
+.labeltext{
+    width:10cm ;
+}
+
+.inputtext{
+    margin-left: 4mm;
+}
+
+
+
+
+.Box1{
+    display: flexbox;
+    flex-direction: row;
+    
+    float: left;
+    text-align: start;
+    text-indent: 4ch;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Box2{
+    display: flex;
+    flex-direction: row;
+    height: 5vh;
+    width: 29vw;
+    margin-left: 3.5ch;
+    justify-content:space-between; 
+}
+
+.Box3{
+    display: flex;
+    flex-direction: row;
+    height: 5vh;
+    width: 29vw;
+    margin-left: 3.5ch;
+    margin-top:2ch;
+}
+
+.input{
+    width: 50ch;
+    height:4ch;
+    
+}
+
+.lastlabel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 6vh; 
+    width: 10.4cm;
+    
+}
+
+.btn1 {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    background-color: inherit;
+    margin-left: 4ch;
+    font-size: 13px;
+    cursor: pointer;
+    display: inline-block;
+    color:blue;  
+  }
+  .btn1:hover {background: #eee;}
+
+  .btn2{
+    display: flex;
+    flex-direction: row;
+    background-color: #0000ff;
+    width:18mm;
+    height: 10mm;
+    margin-left:27ch;
+    color: white;
+    align-items: center;
+    text-indent:1.5ch;
+    
+}
+.btn2:hover{background: navy;}
