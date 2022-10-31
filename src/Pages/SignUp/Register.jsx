@@ -36,10 +36,17 @@ export default function Register() {
                         <input type="Password" placeholder='Confirm Password'></input>
                     </div>
 
-                    <br></br><br></br>
+                    <br></br>
+
+                    <div className={Style.Checkbox}>
+                        <input type="checkbox"></input>
+                        <label>Show Password</label>
+                    </div>
+                    
+                    <br></br>
 
                     <div className={Style.lastlabel}>
-                        <button className={Style.btn1}>SignIn instead</button>
+                        <button className={Style.btn1}>Sign In instead</button>
                         <button className={Style.btn2}>Next</button>
                     </div>
 
