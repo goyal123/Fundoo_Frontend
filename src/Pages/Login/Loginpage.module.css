@@ -12,10 +12,10 @@
 }
 
 .inputlabel{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 5vh; 
+    margin-left: 1cm;
+    height: 10vh; 
+    width: 25vw;
+    
     
 }
 
@@ -28,9 +28,8 @@
 .lastlabel{
     display: flex;
     flex-direction: row;
-    align-items: center;
     height: 5vh; 
-    
+     
 }
 
 .btn1 {
@@ -63,7 +62,7 @@
 .btn2:hover{background: navy;}
 
 .imageset{
-    margin-left:6mm;
+    margin-left:2mm;
 }
 
 

@@ -19,7 +19,6 @@ export default function Register_copy() {
                         <TextField type={'text'} sx={{ width: 0.40 }} label="Last Name" variant="outlined" />
                         <div className={Style.Column2}>
                             <img className={Style.img} src='/logo1.png'></img>
-                            <h5> One Account.All of Google<bR></bR> working for you.</h5>
                         </div>
                     </div>
                     <br></br>
