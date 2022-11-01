@@ -7,8 +7,6 @@
     border: 0.5ch white;
     border-style:ridge;
     
-    
-    
 }
 
 .Column1{
@@ -17,24 +15,30 @@
     width: 32vw;
     justify-content: space-between;
     
+    
+    
 }
 .Column2{
     display: flex;
     flex-direction:column;
-    font-family:'Times New Roman', Times, serif;
+    width: 26vw;
+    height: 60vh;
+    text-indent: 6ch;
+    
     
     
 }
 
 .img{
-    width:10vw;
+    width:12vw;
     height:25vh;
-    margin-left:3cm; 
-    padding-top: 15ch;
+    margin-left:2cm; 
+    padding-top: 1ch;
 }
 
 .imageset{
     margin-left:6mm;
+    margin-top: 6mm;
     
 }
 
@@ -80,10 +84,11 @@
 .Box4{
     display: flex;
     flex-direction: row;
-    height: 10vh;
+    height: 6vh;
     width: 30vw;
     margin-left: 3.5ch;
     justify-content:space-between; 
+    
     
     
 }
@@ -99,7 +104,8 @@
     flex-direction: row;
     justify-content: space-evenly;
     height: 7vh; 
-    width: 10.4cm;
+    width: 11cm;
+    margin-left: 4ch;
     
     
     
@@ -149,4 +155,16 @@ h5{
     text-align:center;
     text-indent: 4ch;
     margin-left: 10ch;
+}
+
+.textset{
+    margin-right:19ch;
+    margin-top: 3mm;
+    font-size: small;
+}
+
+.textset1{
+    margin-left:5mm;
+    margin-top: 1mm;
+    font-size: small;
 }

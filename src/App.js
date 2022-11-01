@@ -8,9 +8,9 @@ import Loginpage_copy from './Pages/Login/Loginpage_copy';
 function App() {
   return (
     <div className='App'>
-       {<Register_copy/>}
        {/*<Loginpage/>*/}
-       <Loginpage_copy/>
+       {<Loginpage_copy/>}
+       {<Register_copy/>}
     </div>
   );
 }
