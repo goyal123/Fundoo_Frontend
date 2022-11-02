@@ -1,0 +1,47 @@
+.note2container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1cm;
+    margin-left: 14cm;
+    width: 16cm;
+    height: 20vh;
+    border:0.1mm;
+    border-style:double;
+    border-radius: 2mm;
+    
+   
+}
+
+.row1{
+    display: flex;
+    flex-direction: row;
+}
+
+.row2{
+    display: flex;
+    flex-direction: row;
+}
+
+input[type=text1] {
+    border: none;
+    margin-left: 2mm;
+    background-color: none;
+    outline: 0;
+    font-size: 16px;
+    height: 30px;
+    width: 40vw;
+    margin-bottom: 2mm;
+   
+  }
+
+  input[type=text2] {
+    border: none;
+    margin-left: 2mm;
+    background-color: none;
+    outline: 0;
+    font-size: 15px;
+    height: 30px;
+    width: 40vw;
+    margin-bottom: 2mm;
+    
+  }

@@ -1,0 +1,41 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    width:100vw;
+    height: 12vh;
+    margin-top: -12mm;
+    border: 0.1vw solid; 
+}
+
+.note1container2{
+    text-align: center;
+    margin-top: 0.7cm;
+    margin-left: -18.15cm;
+    margin-right: 18cm;
+}
+
+.imgset{
+    margin-top: 4mm;
+    margin-left: 3mm;
+}
+
+p.normal {
+    font-weight: normal;
+    font-size:x-large;
+    margin-left: 4mm;
+    margin-top: 4mm;
+  }
+
+.searchbox{
+    width:60vw;
+  }
+
+  .searchtext{
+    width:60vw;
+  }
+
+  .seticon{
+    margin-left: 2cm;
+    margin-top: 0cm;
+    margin-right: 1ch;
+  }

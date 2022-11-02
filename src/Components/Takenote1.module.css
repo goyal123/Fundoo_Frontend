@@ -1,0 +1,17 @@
+.note1container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 1cm;
+    margin-left: 10cm;
+    width: 30cm;
+    
+}
+.note1container2{
+    text-align: center;
+    margin-top: 0.7cm;
+    margin-left: -4.5cm;
+}
+
+
+ 
