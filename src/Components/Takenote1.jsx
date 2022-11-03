@@ -11,7 +11,7 @@ export default function Takenote1() {
             <div className={Style.note1container}>
                 <TextField type={'text'} sx={{ marginLeft:20,marginTop:1, width:0.5}} placeholder="Take a note"/>  
                 <div className={Style.note1container2}>
-                    <CheckBoxOutlinedIcon/>
+                    <CheckBoxOutlinedIcon sx={{marginTop:0,marginLeft:1}}/>
                 </div>
                 <BrushOutlinedIcon sx={{marginTop:3,marginLeft:4}}/>
                 <InsertPhotoOutlinedIcon sx={{marginTop:3,marginLeft:4}}/>

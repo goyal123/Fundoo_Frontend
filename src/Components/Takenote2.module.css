@@ -9,7 +9,26 @@
     border-style:double;
     border-radius: 2mm;
     
-   
+}
+
+.maincontainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.note3container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 1cm;
+    margin-left: 8cm;
+    width: 7.5cm;
+    height: 18vh;
+    border:0.1mm;
+    border-style:double;
+    border-radius: 0.5mm;
+    
+    
 }
 
 .row1{
@@ -20,6 +39,7 @@
 .row2{
     display: flex;
     flex-direction: row;
+    
 }
 
 input[type=text1] {

@@ -7,6 +7,7 @@ import Loginpage_copy from './Pages/Login/Loginpage_copy';
 import Header from './Components/Header';
 import Takenote1 from './Components/Takenote1';
 import Takenote2 from './Components/Takenote2';
+import Takenote3 from './Components/Takenote3';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
       
       <Header />
       {/*<Takenote1/>*/}
-      <Takenote2/>
+      {<Takenote2/>}
+      <Takenote3/>
       
       
     </>
