@@ -8,6 +8,7 @@ import Header from './Components/Header';
 import Takenote1 from './Components/Takenote1';
 import Takenote2 from './Components/Takenote2';
 import Takenote3 from './Components/Takenote3';
+import Dashboard from './Pages/Dashboard/dashboard';
 
 function App() {
   return (
@@ -15,16 +16,12 @@ function App() {
     
       <div className='App'>
         {/*<Loginpage/>*/}
-        {/*<Loginpage_copy/>*/}
+        {/* <Loginpage_copy/> */}
         {/*<Register_copy/>*/}
         
       </div>
 
-      
-      <Header />
-      {/*<Takenote1/>*/}
-      {<Takenote2/>}
-      <Takenote3/>
+      {<Dashboard/>}
       
       
     </>
