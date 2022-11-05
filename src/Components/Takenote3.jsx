@@ -10,26 +10,28 @@ import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 
 
-export default function Takenote3() {
+export default function Takenote3(props) {
+
   return (
     <>
-    <div className={Style.maincontainer}>
-
+    
         <div className={Style.note3container}>
         <div className={Style.row2}>
-            <input type={'text2'} placeholder=""/>  
+            {/* <input type={'text2'} placeholder=""/>   */}
+            <span>{props.note.title}</span>
+            <span>{props.note.description}</span>
         </div>
         <div>
         <AddAlertOutlinedIcon sx={{marginTop:6,marginLeft:1}} fontSize='small'/>
-        <PersonAddAlt1OutlinedIcon sx={{marginTop:1,marginLeft:3.5}} fontSize='small'/>
-        <ColorLensOutlinedIcon sx={{marginTop:1,marginLeft:3.5}} fontSize='small'/>
-        <ImageOutlinedIcon sx={{marginTop:1,marginLeft:3.5}} fontSize='small'/>
-        <ArchiveOutlinedIcon sx={{marginTop:1,marginLeft:3.5}} fontSize='small'/>
-        <MoreVertOutlinedIcon sx={{marginTop:1,marginLeft:3.5}} fontSize='small'/>
+        <PersonAddAlt1OutlinedIcon sx={{marginTop:1,marginLeft:2.5}} fontSize='small'/>
+        <ColorLensOutlinedIcon sx={{marginTop:1,marginLeft:2.5}} fontSize='small'/>
+        <ImageOutlinedIcon sx={{marginTop:1,marginLeft:2.5}} fontSize='small'/>
+        <ArchiveOutlinedIcon sx={{marginTop:1,marginLeft:2.5}} fontSize='small'/>
+        <MoreVertOutlinedIcon sx={{marginTop:1,marginLeft:2.5}} fontSize='small'/>
         </div>
         </div>
         
-    </div>
+    
 
         
     </>

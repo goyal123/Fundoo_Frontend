@@ -11,3 +11,8 @@ export const addnoteapi=(noteobj) => {
     console.log("login in process")
     return response;
 }
+
+export const getNoteListApi = () => {
+    let response = axios.get("http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList",headerconfig)
+    return response;
+}

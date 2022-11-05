@@ -13,7 +13,7 @@ export default function Takenote1(props) {
     return (
         <>
             <div className={Style.note1container} onClick={funhandlenote1}>
-                <TextField type={'text'} sx={{ marginLeft:20,marginTop:1, width:0.5}} placeholder="Take a note" />  
+                <TextField type={'text'} sx={{ marginLeft:55,marginTop:1, width:0.5}} placeholder="Take a note" />  
                 <div className={Style.note1container2}>
                     <CheckBoxOutlinedIcon sx={{marginTop:0,marginLeft:1}}/>
                 </div>

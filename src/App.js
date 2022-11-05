@@ -16,7 +16,7 @@ function App() {
     
       <div className='App'>
         {/*<Loginpage/>*/}
-        {/* <Loginpage_copy/> */}
+        {/* {<Loginpage_copy/> } */}
         {/*<Register_copy/>*/}
         
       </div>

@@ -1,0 +1,8 @@
+.container{
+    border:'11px solid black';
+    max-width:76vw;
+    display:grid;
+    grid-column-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-left: 280px;
+}

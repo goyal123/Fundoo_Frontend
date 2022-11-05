@@ -1,7 +1,7 @@
 .Header{
     display: flex;
     flex-direction: row;
-    width:100vw;
+    width:99.7vw;
     height: 12vh;
     margin-top: -12mm;
     border: 0.1vw solid; 

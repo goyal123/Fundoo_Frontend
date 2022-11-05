@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: row;
     margin-top: 1cm;
-    margin-left: 9.8cm;
-    width: 31.9cm;
+    margin-left: 1cm;
+    width:95vw;
     border:0.1mm;
     border-radius: 2mm;
     background-color: none;
     outline: 0;
+    
     
 }
 .note1container2{
