@@ -10,13 +10,17 @@ export default function Dashboard() {
     const [noteSwitch,setnoteSwitch] = useState(false)
     const [note3List,setNote3List] = useState([])
 
-    useEffect(() => {
+    const getnotenew=() => {
       getNoteListApi().then((response) => {
         console.log(response)
         setNote3List(response.data.data.data)
       }).catch((error) => {
         console.log(error)
       })
+    }
+
+    useEffect(() => {
+      getnotenew()
     },[])
 
     const listentotakenote1=() => {
@@ -35,9 +39,10 @@ export default function Dashboard() {
         }
         <div className={Style.container}>
           {
-            note3List.map((note) => (<Takenote3 note={note}/>))
+            note3List.map((note) => (<Takenote3 note={note} getnotenew={getnotenew}/>))
           }
         </div>
+        
     </div>
   )
 }
