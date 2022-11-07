@@ -1,12 +1,12 @@
 .note1container{
     display: flex;
     flex-direction: row;
+    position: relative;
     margin-top: 1cm;
-    margin-left: 1cm;
-    width:95vw;
+    margin-left: 12cm;
+    width:50vw;
     border:0.1mm;
     border-radius: 2mm;
-    background-color: none;
     outline: 0;
     
     
