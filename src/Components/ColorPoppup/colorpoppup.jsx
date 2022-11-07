@@ -36,6 +36,7 @@ export default function ColorPoppup(props) {
   }
 
   const handleClick = (event) => {
+    console.log("handleclick function called in child colorpop.js",event)
     setAnchorEl(event.currentTarget);
     setOpen((previousOpen) => !previousOpen);
   };

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../Components/Header'
+import Headernew from '../../Components/headernew'
 import Takenote1 from '../../Components/Takenote1'
 import Takenote2 from '../../Components/Takenote2'
 import Takenote3 from '../../Components/Takenote3'
 import { getNoteListApi } from '../../services/dataService'
 import Style from './dashboard.module.css'
+
 
 export default function Dashboard() {
     const [noteSwitch,setnoteSwitch] = useState(false)
@@ -34,6 +36,7 @@ export default function Dashboard() {
   return (
     <div>
         <Header/>
+       {/* <Headernew/> */}
         {
             noteSwitch ? <Takenote2 listentotakenote2={listentotakenote2}/> : <Takenote1 listentotakenote1={listentotakenote1}/>
         }

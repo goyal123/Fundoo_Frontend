@@ -25,11 +25,14 @@ export default function Takenote2(props) {
   }
 
   const colornote=(e) => {
+    //console.log("colornote called in parent takenote2 ",e)
     setnoteObj((prevstate) => ({...prevstate,color:e}))
+
   }
 
   const submitnote=() => {
     console.log("submitnote called")
+    // console.log(noteobj)
     props.listentotakenote2()
     addnoteapi(noteobj).then((response) => {
       console.log(response)
