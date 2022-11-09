@@ -9,8 +9,37 @@ import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import ColorPoppup from './ColorPoppup/colorpoppup';
+import { archieveapi, deletenoteapi } from '../services/dataService';
 
 export default function Takenote3(props) {
+  console.log(props.note)
+  const updatearchieve=(id) => {
+     let archievobj = {
+      noteIdList:[id],
+      isArchived:true
+     }
+
+     archieveapi(archievobj).then((response) => {
+      console.log(response)
+  }).catch((error) => {
+      console.log(error)
+  })
+
+  }
+
+  const deletednote=(id) => {
+    let deleteobj = {
+      noteIdList:[id],
+      isDeleted:true
+    }
+    deletenoteapi(deleteobj).then((response) => {
+      console.log(response)
+  }).catch((error) => {
+      console.log(error)
+  })
+
+  }
+
   const colorupdate=() => {
     props.getnotenew()
   }
@@ -29,8 +58,8 @@ export default function Takenote3(props) {
         {/* { <ColorLensOutlinedIcon sx={{marginTop:1,marginLeft:2.5}} fontSize='small'/> } */}
         <ColorPoppup action='update' id={props.note.id} colorupdate={colorupdate}/>
         <ImageOutlinedIcon sx={{marginTop:5,marginLeft:2.5}} fontSize='small'/>
-        <ArchiveOutlinedIcon sx={{marginTop:5,marginLeft:2.5}} fontSize='small'/>
-        <MoreVertOutlinedIcon sx={{marginTop:5,marginLeft:2.5}} fontSize='small'/>
+        <ArchiveOutlinedIcon sx={{marginTop:5,marginLeft:2.5}} fontSize='small' onClick={() => updatearchieve(props.note.id)}/>
+        <MoreVertOutlinedIcon sx={{marginTop:5,marginLeft:2.5}} fontSize='small' onClick={() => deletednote(props.note.id)}/>
         </div>
         </div>
         

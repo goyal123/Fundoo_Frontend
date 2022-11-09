@@ -4,6 +4,8 @@ import Popper from '@mui/material/Popper';
 import Fade from '@mui/material/Fade';
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import { addnoteapi } from '../../services/dataService';
+import { addcolorapi } from '../../services/dataService';
+
 
 export default function ColorPoppup(props) {
   const [open, setOpen] = React.useState(false);
@@ -21,7 +23,7 @@ export default function ColorPoppup(props) {
                 color:colour
             }
         console.log(colorobj)
-        addnoteapi(colorobj).then((response) => {
+        addcolorapi(colorobj).then((response) => {
             console.log(response)
             props.colorupdate()
         }).catch((error) => {

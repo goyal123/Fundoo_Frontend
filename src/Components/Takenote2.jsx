@@ -14,7 +14,7 @@ import ColorPoppup from './ColorPoppup/colorpoppup';
 
 export default function Takenote2(props) {
 
-  const [noteobj,setnoteObj] = useState({title:'' , description:'',color:''})
+  const [noteobj,setnoteObj] = useState({title:'' , description:'',color:'',isArchived:false})
 
   const taketitle=(e) => {
     setnoteObj((prevstate) => ({...prevstate,title:e.target.value}))
@@ -28,6 +28,10 @@ export default function Takenote2(props) {
     //console.log("colornote called in parent takenote2 ",e)
     setnoteObj((prevstate) => ({...prevstate,color:e}))
 
+  }
+
+  const changearchieve=() => {
+    setnoteObj((prevstate) => ({...prevstate,isArchived:true}))
   }
 
   const submitnote=() => {
@@ -56,7 +60,7 @@ export default function Takenote2(props) {
         {/* <ColorLensOutlinedIcon sx={{marginTop:1,marginLeft:3.5}} fontSize='small'/> */}
         <ColorPoppup colornote={colornote} action='create'/>
         <ImageOutlinedIcon sx={{marginTop:5,marginLeft:3.5}} fontSize='small'/>
-        <ArchiveOutlinedIcon sx={{marginTop:5,marginLeft:3.5}} fontSize='small'/>
+        <ArchiveOutlinedIcon sx={{marginTop:5,marginLeft:3.5}} fontSize='small' onClick={changearchieve}/>
         <MoreVertOutlinedIcon sx={{marginTop:5,marginLeft:3.5}} fontSize='small'/>
         <Button sx={{ marginTop:4,marginLeft: 31, marginRight: 1,marginBottom:0,color:'black' }} variant="text" onClick={submitnote}>Close</Button>
         </div>

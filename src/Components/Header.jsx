@@ -47,10 +47,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Header() {
+export default function Header(props) {
+  const menubutton=() => {
+    props.listentoheader()
+  }
+  
   return (
+    <>
     <div className={Style.Header}>
-      <MenuIcon style={{marginTop:20,marginLeft:22}}/>
+      <MenuIcon style={{marginTop:20,marginLeft:22}} onClick={menubutton}/>
         <div className={Style.imgset}>
             <img src='./keep.png' height="40"></img> 
         </div>
@@ -74,5 +79,6 @@ export default function Header() {
         <AccountCircleOutlinedIcon sx={{ marginLeft:1.5,marginRight:4,marginTop:3}}/>
         
     </div>
+    </>
   )
 }
