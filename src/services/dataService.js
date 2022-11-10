@@ -35,3 +35,10 @@ export const deletenoteapi=(noteobj) => {
     console.log("Delete in progress api")
     return response;
 }
+
+
+export const updatenoteapi=(noteobj) => {
+    let response = axios.post("http://fundoonotes.incubation.bridgelabz.com/api/notes/updateNotes",noteobj,headerconfig)
+    console.log("updatein progress api")
+    return response;
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import MiniDrawer from '../../Components/drawer/drawer'
+import MiniDrawer from '../../Components/drawer/MiniDrawer'
 import Header from '../../Components/Header'
 import Headernew from '../../Components/headernew'
 import Takenote1 from '../../Components/Takenote1'
@@ -19,8 +19,8 @@ export default function Dashboard() {
         setdrawerToggle(!drawerToggle)
     }
 
-    const listenToDrawer = (hover) => {
-      setNoteChoice(hover)
+    const listenToDrawer = (options) => {
+      setNoteChoice(options)
   }
 
     const getnotenew=() => {

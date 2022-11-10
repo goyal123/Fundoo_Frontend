@@ -18,6 +18,7 @@ export default function ColorPoppup(props) {
             props.colornote(colour)
         }
         if(props.action==='update'){
+          console.log("id = ",props.id)
             let colorobj = {
                 noteIdList:[props.id],
                 color:colour

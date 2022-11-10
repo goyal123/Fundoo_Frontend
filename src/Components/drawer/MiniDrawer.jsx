@@ -27,7 +27,7 @@ import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
-  marginTop:60,
+  marginTop:70,
   width: drawerWidth,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
@@ -37,7 +37,7 @@ const openedMixin = (theme) => ({
 });
 
 const closedMixin = (theme) => ({
-    marginTop:60,
+    marginTop:70,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -84,7 +84,7 @@ export default function MiniDrawer(props) {
 
   return (
     <>
-    <Box sx={{ display: 'flex',flexDirection:'column',backgroundColor:'red'}}>
+    <Box sx={{ display: 'flex',flexDirection:'column'}}>
       <Drawer variant="permanent" open={props.drawerToggle} sx={{marginTop:-100}}>
         <List>
             <ListItem disablePadding sx={{ display: 'block'}} onClick={() => selectOption('Notes')} >

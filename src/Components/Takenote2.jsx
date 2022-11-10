@@ -48,11 +48,11 @@ export default function Takenote2(props) {
     <>
     <div className={Style.note2container} style={{backgroundColor:noteobj.color}}>
         <div className={Style.row1}>
-            <input type={'text1'} placeholder="Title" onChange={taketitle}/>  
+            <input type={'text1'} placeholder="Title" onChange={taketitle} style={{backgroundColor:noteobj.color}}/>  
             <PushPinOutlinedIcon sx={{marginLeft:0,marginRight:1}}/>
         </div>
         <div className={Style.row2}>
-            <input type={'text2'} placeholder="Take a note" onChange={takedesc}/>  
+            <input type={'text2'} placeholder="Take a note" onChange={takedesc} style={{backgroundColor:noteobj.color}}/>  
         </div>
         <div style={{display:'flex',backgroundColor:'',alignItems:'center',marginTop:-20}}>
         <AddAlertOutlinedIcon sx={{marginTop:5,marginLeft:1}} fontSize='small'/>
