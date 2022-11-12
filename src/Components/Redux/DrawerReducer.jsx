@@ -1,5 +1,6 @@
 const drawerState = {
-    label: 'Keep'
+    label: <img src='./keep.png' height="40"></img>,
+    label2:'Keep'
 }
 
 export const DrawerReducer = (state = drawerState, action) => {
@@ -7,27 +8,32 @@ export const DrawerReducer = (state = drawerState, action) => {
         case 'Notes':
             return {
                 ...state,
-                label: 'Notes'
+                label: <img src='./keep.png' height="40"></img>,
+                label2:'Keep'
             }
         case 'Reminders':
             return {
                 ...state,
-                label: 'Reminders'
+                label: 'Reminders',
+                label2:' '
             }
         case 'Edit':
             return {
                 ...state,
-                label: 'Edit'
+                label: 'Edit',
+                label2:' '
             }
         case 'Archive':
             return {
                 ...state,
-                label: 'Archive'
+                label: 'Archive',
+                label2:' '
             }
         case 'Trash':
             return {
                 ...state,
-                label: 'Trash'
+                label: 'Trash',
+                label2:' '
             }
         default: 
             return state

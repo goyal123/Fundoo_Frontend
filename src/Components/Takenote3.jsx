@@ -15,6 +15,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Card from '@mui/material/Card';
+import Paper from '@mui/material/Paper';
 
 
 const style = {
@@ -100,7 +102,8 @@ export default function Takenote3(props) {
 
   return (
     <>
-      <div className={Style.note3container} style={{ backgroundColor: props.note.color }}>
+      <Card variant="outlined" style={{marginTop:20,borderRadius:5,backgroundColor: props.note.color }}>
+      {/* <div className={Style.note3container} style={{ backgroundColor: props.note.color }}> */}
         <div className={Style.row2}>
           <span onClick={() => handleOpen(props.note)}>{props.note.title}</span>
           <span onClick={() => handleOpen(props.note)}>{props.note.description}</span>
@@ -113,13 +116,14 @@ export default function Takenote3(props) {
            <ArchiveOutlinedIcon sx={{ marginTop: 5, marginLeft: 2.5 }} fontSize='small' onClick={() => updatearchieve(props.note.id)} />
           <MoreVertOutlinedIcon sx={{ marginTop: 5, marginLeft: 2.5 }} fontSize='small' />
         </div>
+        </Card>
 
         <Modal open={open} onClose={handleClose}>
-          <Box sx={style} style={{ backgroundColor: props.note.color }}>
-            <div className={Style.row1}>
+          <Box sx={style} style={{ backgroundColor: props.note.color,borderRadius:8 }}> 
+            <div className={Style.row3}>
               <input type={'text1'} defaultValue={updateNote.title} style={{backgroundColor:props.note.color}} onChange={newtitle}></input>
             </div>
-            <div className={Style.row2}>
+            <div className={Style.row4}>
               <input type={'text2'} defaultValue={updateNote.description} style={{backgroundColor:props.note.color}} onChange={newdesc}></input>
             </div>
             <div style={{ display: 'flex', backgroundColor: '', alignItems: 'center', marginTop: 0 }}>
@@ -130,11 +134,12 @@ export default function Takenote3(props) {
               <MoreVertOutlinedIcon sx={{ marginTop: 5, marginLeft: 3.5, marginRight: 1 }} fontSize='small' />
               <Button sx={{ marginTop: 5, marginLeft: 30, marginBottom: 0, color: 'black' }} variant="text" onClick={close}>Close</Button>
             </div>
-
-          </Box>
+           </Box> 
         </Modal>
+       
+      {/* </div> */}
 
-      </div>
+      
 
 
 

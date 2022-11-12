@@ -20,10 +20,15 @@
 }
 
 p.normal {
+    display: flex;
     font-weight: normal;
     font-size:x-large;
-    margin-left: 4mm;
+    margin-left: 5mm;
     margin-top: 4mm;
+    margin-right: 4mm;
+    width:7vw;
+    
+    
   }
 
 .searchbox{

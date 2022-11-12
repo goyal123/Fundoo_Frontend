@@ -52,17 +52,28 @@ function Header(props) {
   const menubutton=() => {
     props.listentoheader()
   }
+
+  const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+        label:state.drawerReducer.label
+    }
+  }
   
   return (
     <>
     <div className={Style.Header}>
       <MenuIcon style={{marginTop:20,marginLeft:22}} onClick={menubutton}/>
-        <div className={Style.imgset}>
-            <img src='./keep.png' height="40"></img> 
-        </div>
-        <div className={Style.textset}>
-            <p className={Style.normal}>{props.label}</p>
-        </div>
+         {/* <div className={Style.imgset}> */}
+            {/* <img src='./keep.png' height="40"></img>  */}
+            {/* {props.label} */}
+        {/* </div> */}
+          <div>
+          
+          <p className={Style.normal}>{props.label}{props.label2}</p>
+          </div>
+            {/* <p className={Style.normal}>{props.label2}</p> */}
+        
         <Search style={{width:'52vw',marginLeft:'80px',marginTop:10,borderRadius:7}}>
             <SearchIconWrapper>
               <SearchIcon />
@@ -87,7 +98,8 @@ function Header(props) {
 const mapStateToProps = (state) => {
   console.log(state)
   return {
-      label:state.drawerReducer.label
+      label:state.drawerReducer.label,
+      label2:state.drawerReducer.label2
   }
 }
 

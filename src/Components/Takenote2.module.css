@@ -4,7 +4,7 @@
     margin-top: 1cm;
     margin-left: 14cm;
     width: 16cm;
-    height: 20vh;
+    height: 22vh;
     border:0.1mm;
     border-style:double;
     border-radius: 2mm;
@@ -34,7 +34,19 @@
 .row2{
     display: flex;
     flex-direction: column;
+    margin-left: 1ch;
+    margin-top: 1ch;
     
+}
+
+.row3{
+    display: flex;
+    flex-direction: row;
+}
+
+.row4{
+    display: flex;
+    flex-direction: column;   
 }
 
 input[type=text1] {
@@ -51,7 +63,7 @@ input[type=text1] {
 
   input[type=text2] {
     border: none;
-    margin-left: 2mm;
+    margin-left: 1mm;
     background-color: none;
     outline: 0;
     font-size: 15px;
