@@ -9,6 +9,9 @@ import Takenote1 from './Components/Takenote1';
 import Takenote2 from './Components/Takenote2';
 import Takenote3 from './Components/Takenote3';
 import Dashboard from './Pages/Dashboard/dashboard';
+import store from './Components/Redux/Store';
+import {Provider} from 'react-redux'
+
 
 function App() {
   return (
@@ -20,8 +23,9 @@ function App() {
         {/*<Register_copy/>*/}
         
       </div>
-
+      <Provider store={store}>
       {<Dashboard/>}
+      </Provider>
       
       
     </>

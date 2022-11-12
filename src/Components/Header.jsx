@@ -12,6 +12,7 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import { blue, green, red } from '@mui/material/colors';
 import MenuIcon from '@mui/icons-material/Menu';
+import {connect} from 'react-redux'
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -47,7 +48,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Header(props) {
+function Header(props) {
   const menubutton=() => {
     props.listentoheader()
   }
@@ -60,7 +61,7 @@ export default function Header(props) {
             <img src='./keep.png' height="40"></img> 
         </div>
         <div className={Style.textset}>
-            <p className={Style.normal}>Keep</p>
+            <p className={Style.normal}>{props.label}</p>
         </div>
         <Search style={{width:'52vw',marginLeft:'80px',marginTop:10,borderRadius:7}}>
             <SearchIconWrapper>
@@ -82,3 +83,12 @@ export default function Header(props) {
     </>
   )
 }
+
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+      label:state.drawerReducer.label
+  }
+}
+
+export default connect(mapStateToProps)(Header)

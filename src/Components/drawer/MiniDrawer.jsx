@@ -23,6 +23,7 @@ import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNone
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import {connect} from 'react-redux'
 
 const drawerWidth = 240;
 
@@ -66,7 +67,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function MiniDrawer(props) {
+function MiniDrawer(props) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -80,6 +81,9 @@ export default function MiniDrawer(props) {
 
   const selectOption = (options) => {
     props.listenToDrawer(options)
+    props.dispatch({
+      type:`${options}`
+    })
   }
 
   return (
@@ -133,3 +137,4 @@ export default function MiniDrawer(props) {
     </>
   );
 }
+export default connect()(MiniDrawer)

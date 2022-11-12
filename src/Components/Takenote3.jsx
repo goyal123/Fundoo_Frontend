@@ -20,12 +20,12 @@ import Modal from '@mui/material/Modal';
 const style = {
   position: 'absolute',
   top: '40%',
-  left: '54.5%',
+  left: '55%',
   transform: 'translate(-50%, -50%)',
   width: 551,
   height: 125,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
+  border: '1px solid #000',
   boxShadow: 24,
   p: 4,
 };
