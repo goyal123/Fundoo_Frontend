@@ -155,8 +155,8 @@ export default function Headernew() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 5 }}>
+      <AppBar position="static" sx={{backgroundColor:'gray'}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -165,7 +165,7 @@ export default function Headernew() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+           
           </IconButton>
           <img src='./keep.png' height="50"></img> 
           <Typography

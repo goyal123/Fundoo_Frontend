@@ -11,6 +11,7 @@ import Takenote3 from './Components/Takenote3';
 import Dashboard from './Pages/Dashboard/dashboard';
 import store from './Components/Redux/Store';
 import {Provider} from 'react-redux'
+import Headernew from './Components/headernew';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
         {/*<Loginpage/>*/}
         {/* {<Loginpage_copy/> } */}
         {/*<Register_copy/>*/}
-        
+        {/* <Headernew/> */}
       </div>
       <Provider store={store}>
       {<Dashboard/>}

@@ -1,5 +1,4 @@
 import React from 'react'
-import Style from './Header.module.css'
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import RefreshIcon from '@mui/icons-material/Refresh';
@@ -12,16 +11,48 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import { blue, green, red } from '@mui/material/colors';
 import MenuIcon from '@mui/icons-material/Menu';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import Box from '@mui/material/Box';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import { makeStyles } from '@mui/styles';
 
+const useStyle = makeStyles({
+  Header:{
+    display: 'flex',
+    flexDirection: 'row',
+    width:'99.7vw',
+    height: '10vh',
+    marginTop: '-12mm',
+    border: '0.1vw solid' 
+  },
+  normal:{
+    display: 'flex',
+    fontWeight: 'normal',
+    fontSize:'x-large',
+    marginLeft: '5mm',
+    marginTop: '4mm',
+    marginRight: '4mm',
+    width:'7vw'
+  },
+  normal2:{
+    display: 'flex',
+    fontWeight: 'normal',
+    fontSize:'x-large',
+    marginLeft: '2mm',
+    marginTop: '1mm',
+    marginRight: '4mm',
+    width:'7vw'
+  }
+})
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   display: 'flex',
   alignItems: 'center',
-  height:50,
-  borderRadius:3,
-  marginTop:10,
+  height: 50,
+  borderRadius: 3,
+  marginTop: 10,
   border: '1px solid black',
 }));
 
@@ -49,48 +80,45 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function Header(props) {
-  const menubutton=() => {
+  const classes = useStyle()   
+  const menubutton = () => {
     props.listentoheader()
   }
 
   const mapStateToProps = (state) => {
     console.log(state)
     return {
-        label:state.drawerReducer.label
+      label: state.drawerReducer.label
     }
   }
-  
+
   return (
     <>
-    <div className={Style.Header}>
-      <MenuIcon style={{marginTop:20,marginLeft:22}} onClick={menubutton}/>
-         {/* <div className={Style.imgset}> */}
-            {/* <img src='./keep.png' height="40"></img>  */}
-            {/* {props.label} */}
-        {/* </div> */}
-          <div>
-          
-          <p className={Style.normal}>{props.label}{props.label2}</p>
-          </div>
-            {/* <p className={Style.normal}>{props.label2}</p> */}
-        
-        <Search style={{width:'52vw',marginLeft:'80px',marginTop:10,borderRadius:7}}>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search'}}
-            />
-          </Search>
+      <Box className={classes.Header} sx={{ flexGrow: 1 }}>
+          <MenuIcon style={{ marginTop: 20, marginLeft: 20 }} onClick={menubutton} />
 
-        <RefreshIcon sx={{ marginLeft: 20,marginTop:3}} />
-        <GridViewOutlinedIcon sx={{ marginLeft: 2,marginTop:3}}/>
-        <SettingsOutlinedIcon sx={{ marginLeft: 2,marginTop:3}}/>
-        <AppsIcon sx={{ marginLeft:8,marginTop:3}}/>
-        <AccountCircleOutlinedIcon sx={{ marginLeft:1.5,marginRight:4,marginTop:3}}/>
-        
-    </div>
+        <div>
+            <p className={classes.normal}>{props.label}
+            <p className={classes.normal2}>{props.label2}</p>
+             </p>
+        </div>
+
+        <Search style={{ width: '52vw', marginLeft: '80px', marginTop: 10, borderRadius: 7 }}>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            placeholder="Search…"
+            inputProps={{ 'aria-label': 'search' }}
+          />
+        </Search>
+
+        <RefreshIcon sx={{ marginLeft: 20, marginTop: 3 }} />
+        <GridViewOutlinedIcon sx={{ marginLeft: 2, marginTop: 3 }} />
+        <SettingsOutlinedIcon sx={{ marginLeft: 2, marginTop: 3 }} />
+        <AppsIcon sx={{ marginLeft: 8, marginTop: 3 }} />
+        <AccountCircleOutlinedIcon sx={{ marginLeft: 1.5, marginRight: 4, marginTop: 3 }} />
+      </Box>
     </>
   )
 }
@@ -98,8 +126,8 @@ function Header(props) {
 const mapStateToProps = (state) => {
   console.log(state)
   return {
-      label:state.drawerReducer.label,
-      label2:state.drawerReducer.label2
+    label: state.drawerReducer.label,
+    label2: state.drawerReducer.label2
   }
 }
 

@@ -11,8 +11,36 @@ import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import Button from '@mui/material/Button';
 import { addnoteapi } from '../services/dataService';
 import ColorPoppup from './ColorPoppup/colorpoppup';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import { makeStyles } from '@mui/styles';
+
+const useStyle = makeStyles({
+  note2container:{
+    display: 'flex',
+    flexDirection: 'column',
+    marginTop: '1cm',
+    marginLeft: '14cm',
+    width: '16cm',
+    height: '22vh',
+    border:'0.1mm',
+    borderStyle:'double',
+    borderRadius: '2mm'
+  },
+  row1:{
+    display: 'flex',
+    flexDirection: 'row'
+  },
+  row2:{
+    display: 'flex',
+    flexDirection: 'column',
+    marginLeft: '1ch',
+    marginTop: '1ch'
+  }
+})
 
 export default function Takenote2(props) {
+  const classes = useStyle()   
 
   const [noteobj,setnoteObj] = useState({title:'' , description:'',color:'',isArchived:false})
 
@@ -46,15 +74,15 @@ export default function Takenote2(props) {
   }
   return (
     <>
-    <div className={Style.note2container} style={{backgroundColor:noteobj.color}}>
-        <div className={Style.row1}>
+    <Paper elevation={3} className={classes.note2container} style={{backgroundColor:noteobj.color}}>
+        <Box className={classes.row1}>
             <input type={'text1'} placeholder="Title" onChange={taketitle} style={{backgroundColor:noteobj.color}}/>  
             <PushPinOutlinedIcon sx={{marginLeft:0,marginRight:1}}/>
-        </div>
-        <div className={Style.row2}>
+        </Box>
+        <Box className={classes.row2}>
             <input type={'text2'} placeholder="Take a note" onChange={takedesc} style={{backgroundColor:noteobj.color}}/>  
-        </div>
-        <div style={{display:'flex',backgroundColor:'',alignItems:'center',marginTop:-20}}>
+        </Box>
+        <Box style={{display:'flex',backgroundColor:'',alignItems:'center',marginTop:-20}}>
         <AddAlertOutlinedIcon sx={{marginTop:5,marginLeft:1}} fontSize='small'/>
         <PersonAddAlt1OutlinedIcon sx={{marginTop:5,marginLeft:3.5}} fontSize='small'/>
         {/* <ColorLensOutlinedIcon sx={{marginTop:1,marginLeft:3.5}} fontSize='small'/> */}
@@ -63,12 +91,10 @@ export default function Takenote2(props) {
         <ArchiveOutlinedIcon sx={{marginTop:5,marginLeft:3.5}} fontSize='small' onClick={changearchieve}/>
         <MoreVertOutlinedIcon sx={{marginTop:5,marginLeft:3.5}} fontSize='small'/>
         <Button sx={{ marginTop:4,marginLeft: 31, marginRight: 1,marginBottom:0,color:'black' }} variant="text" onClick={submitnote}>Close</Button>
-        </div>
-        
-        
-        
+        </Box>
 
-    </div>
+        </Paper>
+    
     </>
     
   )
