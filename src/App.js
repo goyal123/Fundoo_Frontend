@@ -11,7 +11,8 @@ import Takenote3 from './Components/Takenote3';
 import Dashboard from './Pages/Dashboard/dashboard';
 import store from './Components/Redux/Store';
 import {Provider} from 'react-redux'
-import Headernew from './Components/headernew';
+import Routerone from './Pages/Router/Router';
+
 
 
 function App() {
@@ -20,12 +21,12 @@ function App() {
     
       <div className='App'>
         {/*<Loginpage/>*/}
-        {/* {<Loginpage_copy/> } */}
-        {/*<Register_copy/>*/}
-        {/* <Headernew/> */}
+          {/* <Loginpage_copy/>  */}
+         {/* { <Register_copy/> }  */}
       </div>
       <Provider store={store}>
-      {<Dashboard/>}
+         {/* <Dashboard/> */}
+         <Routerone/>
       </Provider>
       
       

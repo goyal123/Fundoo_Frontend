@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Style from './Takenote2.module.css';
+// import Style from './Takenote2.module.css';
 import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import TextField from '@mui/material/TextField';
 import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';

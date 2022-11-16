@@ -22,7 +22,7 @@ const useStyle = makeStyles({
     display: 'flex',
     flexDirection: 'row',
     width:'99.7vw',
-    height: '10vh',
+    height: '10.5vh',
     marginTop: '-12mm',
     border: '0.1vw solid' 
   },
@@ -53,7 +53,8 @@ const Search = styled('div')(({ theme }) => ({
   height: 50,
   borderRadius: 3,
   marginTop: 10,
-  border: '1px solid black',
+  border: '0px solid black',
+  backgroundColor:'lightgray'
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({

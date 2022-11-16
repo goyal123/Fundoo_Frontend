@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Style from './Takenote2.module.css';
+// import Style from './Takenote2.module.css';
 import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import TextField from '@mui/material/TextField';
 import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
@@ -22,10 +22,7 @@ const useStyle = makeStyles({
     marginTop: '1cm',
     marginLeft: '14cm',
     width: '16cm',
-    height: '22vh',
-    border:'0.1mm',
-    borderStyle:'double',
-    borderRadius: '2mm'
+    height: '22vh'
   },
   row1:{
     display: 'flex',
@@ -36,7 +33,27 @@ const useStyle = makeStyles({
     flexDirection: 'column',
     marginLeft: '1ch',
     marginTop: '1ch'
+  },
+  text1:{
+    marginLeft: '2mm',
+    outline:0,
+    border:'none',
+    fontSize: '16px',
+    height: '30px',
+    width: '40vw',
+    marginBottom:'2mm'
+  },
+  text2:{
+    marginLeft: '0mm',
+    outline:0,
+    border:'none',
+    fontSize: '15px',
+    height: '30px',
+    width: '40vw',
+    marginBottom:'2mm'
   }
+
+
 })
 
 export default function Takenote2(props) {
@@ -76,11 +93,11 @@ export default function Takenote2(props) {
     <>
     <Paper elevation={3} className={classes.note2container} style={{backgroundColor:noteobj.color}}>
         <Box className={classes.row1}>
-            <input type={'text1'} placeholder="Title" onChange={taketitle} style={{backgroundColor:noteobj.color}}/>  
+            <input type={'text'} className={classes.text1} placeholder="Title" onChange={taketitle} style={{backgroundColor:noteobj.color}}/>  
             <PushPinOutlinedIcon sx={{marginLeft:0,marginRight:1}}/>
         </Box>
         <Box className={classes.row2}>
-            <input type={'text2'} placeholder="Take a note" onChange={takedesc} style={{backgroundColor:noteobj.color}}/>  
+            <input type={'text'} className={classes.text2} placeholder="Take a note" onChange={takedesc} style={{backgroundColor:noteobj.color}}/>  
         </Box>
         <Box style={{display:'flex',backgroundColor:'',alignItems:'center',marginTop:-20}}>
         <AddAlertOutlinedIcon sx={{marginTop:5,marginLeft:1}} fontSize='small'/>

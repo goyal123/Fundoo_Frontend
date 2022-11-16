@@ -8,20 +8,29 @@ import Paper from '@mui/material/Paper';
 
 
 const useStyle = makeStyles({
+    
     note1container: {
         display: 'flex',
         flexDirection: 'row',
         marginTop:'1cm',
         marginLeft: '11cm',
         width:'50vw',
-        border:'0.1mm',
-        borderRadius: '2mm',
-        outline:'0',
+        height:'8vh',
+        
+    },
+    iconset:{
+        marginRight:'30px'
     },
     note1container2:{
+        display:'flex',
+        width:'10vw',
         textAlign: 'center',
-        marginTop: '0.7cm',
-        marginLeft: '-4.5cm'
+        marginTop: '20px',
+        marginLeft: '-4cm',
+
+    },
+    ['']:{
+        
     }
     
 })
@@ -37,10 +46,18 @@ export default function Takenote1(props) {
             <Paper elevation={3} className={classes.note1container} onClick={funhandlenote1}>
                 <TextField  type={'text'} sx={{ marginLeft:0,marginTop:0, width:1}} placeholder="Take a note" />  
                 <div className={classes.note1container2}>
-                    <CheckBoxOutlinedIcon sx={{marginTop:0,marginLeft:1}}/>
+                    <div className={classes.iconset}>
+                    <CheckBoxOutlinedIcon/>
+                    </div>
+                    <div className={classes.iconset}>
+                        <BrushOutlinedIcon/>
+                    </div>
+                    <div className={classes.iconset}> 
+                        <InsertPhotoOutlinedIcon/>
+                    </div>
+
                 </div>
-                <BrushOutlinedIcon sx={{marginTop:3,marginLeft:4}}/>
-                <InsertPhotoOutlinedIcon sx={{marginTop:3,marginLeft:4}}/>
+                
             </Paper>
         </>
 

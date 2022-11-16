@@ -4,12 +4,15 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { loginapi } from '../../services/userService';
 import Link from '@mui/material/Link';
+import { useNavigate } from 'react-router-dom';
 
 
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
 
 export default function Loginpage_copy() {
+
+    const navigate=useNavigate()
 
     const [signinobj, setsigninobj] = useState({ email: '', password: '' })
     const [regexobj, setregexobj] = useState({ emailBorder: false, emailHelper: "", passswordBorder: false, passwordHelper: "" });
@@ -62,6 +65,7 @@ export default function Loginpage_copy() {
             loginapi(signinobj).then((response) => {
                 console.log(response)
                 localStorage.setItem("token",response.data.id)
+                navigate('/dashboard')
             }).catch((error) => {
                 console.log(error)
             })
