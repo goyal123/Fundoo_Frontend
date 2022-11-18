@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import Style from './Register.module.css'
 import Button from '@mui/material/Button';
 import { registerapi } from '../../services/registerService';
+import { useNavigate } from 'react-router-dom';
 
 const fnameRegex = /^[A-Z]{1}[a-z]{2,}$/;
 const lnameRegex = /^[A-Z]{1}[a-z]{2,}$/;
@@ -11,6 +12,7 @@ const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).
 
 
 export default function Register_copy() {
+    const navigate=useNavigate()
     const [signupobj, setsignupobj] = useState({ firstName: "", lastName: "", service: "advance", email: "", password: "" })
     const [regexobj, setregexobj] = useState({ fnameBorder: false, fnameHelper: "", lnameBorder: false, lnameHelper: "", emailBorder: false, emailHelper: "", passswordBorder: false, passwordHelper: "" });
 
@@ -81,6 +83,7 @@ export default function Register_copy() {
 
             registerapi(signupobj).then((response) => {
                 console.log(response)
+                navigate('/')
             }).catch((error) => {
                 console.log(error)
             })

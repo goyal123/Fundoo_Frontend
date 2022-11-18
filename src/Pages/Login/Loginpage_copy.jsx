@@ -73,6 +73,9 @@ export default function Loginpage_copy() {
 
         console.log(signinobj);
     }
+    const navigatesignup=() => {
+        navigate('/signup')
+    }
 
     return (
         <>
@@ -107,7 +110,7 @@ export default function Loginpage_copy() {
                 </div>
                 <br></br><br></br><br></br>
                 <div className={Style.lastlabel}>
-                    <Button sx={{ marginLeft: 4, marginRight: 1 }} variant="text">create account</Button>
+                    <Button sx={{ marginLeft: 4, marginRight: 1 }} variant="text"  onClick={navigatesignup}>create account</Button>
                     <Button sx={{ marginLeft: 14, width: 0.20 }} variant="contained" onClick={submit}>NEXT</Button>
                 </div>
             </div>

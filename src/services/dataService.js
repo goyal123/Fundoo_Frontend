@@ -8,6 +8,7 @@ const headerconfig = {
 
 export const addnoteapi=(noteobj) => {
     let response = axios.post("http://fundoonotes.incubation.bridgelabz.com/api/notes/addNotes",noteobj,headerconfig)
+    //let response = axios.post("http://localhost:44323/api/Notes/CreateNote",noteobj,headerconfig)
     console.log("login in process")
     return response;
 }

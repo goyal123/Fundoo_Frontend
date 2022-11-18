@@ -4,7 +4,7 @@
     background-color:white;
     height: 80vh;
     width:32vw;
-    margin-left:40ch;
+    margin-left:50ch;
     margin-top: 5ch;
     border: 0.5ch white;
     border-style:ridge;
@@ -64,16 +64,18 @@
 .btn2:hover{background: navy;}
 
 .imageset{
-    margin-left:2mm;
+    margin-left:40%;
     margin-top: 1cm;
     
 }
 
 .leftside1{
-    margin-right: 7.4cm
+    margin-left: 40px;
+    margin-top: 10px;
 }
 .leftside2{
-    margin-right: 7.1cm
+    margin-left: 40px;
+    margin-top: 10px;
 }
 
 

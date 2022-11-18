@@ -23,8 +23,8 @@ const useStyle = makeStyles({
     flexDirection: 'row',
     width:'99.7vw',
     height: '10.5vh',
-    marginTop: '-12mm',
-    border: '0.1vw solid' 
+    marginTop: '-3.5%',
+
   },
   normal:{
     display: 'flex',
@@ -43,6 +43,68 @@ const useStyle = makeStyles({
     marginTop: '1mm',
     marginRight: '4mm',
     width:'7vw'
+  },
+  normal3:{
+    width: '52vw',
+    marginLeft: '80px',
+    marginTop: '1px',
+    borderRadius: 7
+  },
+  normal4:{
+    marginLeft: '11%',
+     marginTop: '23px',
+     marginRight:'10px'
+  },
+  normal5:{
+     marginTop: '23px',
+     marginRight:'15px'
+  },
+  normal6:{
+    marginTop: '23px',
+    marginRight:'5px'
+ },
+ normal7:{
+  marginLeft:'5%',
+  marginTop: '23px',
+  marginRight:'15px'
+},
+normal8:{
+  marginTop: '23px',
+  marginRight:'5px'
+},
+
+
+  ['@media screen and (min-width:200px) and (max-width : 768px)']:{
+    Header:{
+
+    },
+    normal:{
+
+    },
+    normal2:{
+
+    },
+    normal3:{
+
+    },
+    normal4:{
+
+    },
+    normal5:{
+
+    },
+    normal6:{
+
+    },
+    normal7:{
+
+    },
+    normal8:{
+
+    }
+
+
+
   }
 })
 
@@ -95,7 +157,7 @@ function Header(props) {
 
   return (
     <>
-      <Box className={classes.Header} sx={{ flexGrow: 1 }}>
+      <Box className={classes.Header}>
           <MenuIcon style={{ marginTop: 20, marginLeft: 20 }} onClick={menubutton} />
 
         <div>
@@ -103,8 +165,8 @@ function Header(props) {
             <p className={classes.normal2}>{props.label2}</p>
              </p>
         </div>
-
-        <Search style={{ width: '52vw', marginLeft: '80px', marginTop: 10, borderRadius: 7 }}>
+        <div className={classes.normal3}>
+        <Search>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
@@ -113,12 +175,25 @@ function Header(props) {
             inputProps={{ 'aria-label': 'search' }}
           />
         </Search>
+        </div>
+        
+        <div className={classes.normal4}>
+        <RefreshIcon/>
+        </div>
+        <div className={classes.normal5}>
+        <GridViewOutlinedIcon/>
+        </div>
 
-        <RefreshIcon sx={{ marginLeft: 20, marginTop: 3 }} />
-        <GridViewOutlinedIcon sx={{ marginLeft: 2, marginTop: 3 }} />
-        <SettingsOutlinedIcon sx={{ marginLeft: 2, marginTop: 3 }} />
-        <AppsIcon sx={{ marginLeft: 8, marginTop: 3 }} />
-        <AccountCircleOutlinedIcon sx={{ marginLeft: 1.5, marginRight: 4, marginTop: 3 }} />
+        <div className={classes.normal6}>
+        <SettingsOutlinedIcon/>
+        </div>
+        <div className={classes.normal7}>
+        <AppsIcon/>
+        </div>
+        <div className={classes.normal8}>
+        <AccountCircleOutlinedIcon/>
+        </div>
+        
       </Box>
     </>
   )

@@ -18,36 +18,21 @@ import Modal from '@mui/material/Modal';
 import Card from '@mui/material/Card';
 import Paper from '@mui/material/Paper';
 import { makeStyles } from '@mui/styles';
+import Grid from '@mui/material/Grid';
 
 const useStyle = makeStyles({
   note3container:{
     display: 'flex',
     flexDirection: 'column',
-    marginTop: '1cm',
-    marginLeft: '0cm',
-    width: '6.5cm',
+    marginTop: '30px',
+    width: '18vw',
     height: '18vh',
-    border:'0.1mm',
-    borderStyle:'double',
-    borderRadius: '0.5mm'
   },
   row2:{
     display: 'flex',
     flexDirection: 'column',
-    marginLeft: '1ch',
-    marginTop: '1ch'
-  },
-  note3box:{
-    position: 'absolute',
-    top: '40%',
-    left: '55%',
-    transform: 'translate(-50%, -50%)',
-    width: 551,
-    height: 125,
-    bgcolor: 'background.paper',
-    border: '1px solid #000',
-    boxShadow: 24,
-    p: 4,
+    marginLeft: '10px',
+    marginTop: '10px'
   },
   row3:{
     display: 'flex',
@@ -56,6 +41,86 @@ const useStyle = makeStyles({
   row4:{
     display: 'flex',
     flexDirection: 'column'
+  },
+  box1:{
+    display: 'flex', 
+    flexDirection: 'row', 
+    alignItems: 'center' 
+  },
+  row5:{
+    display: 'flex',
+    alignItems: 'center'
+
+  },
+  row7:{
+    marginTop:'50px',
+    marginLeft:'10px',
+    marginRight:'15px'
+  },
+  row8:{
+    marginTop: '50px', 
+    marginLeft: '55%',  
+    color: 'black'
+  },
+  row9:{
+    marginTop:'40px',
+    marginLeft:'10px',
+    marginRight:'8px'
+  },
+  row10:{
+    marginTop:'40px',
+    marginLeft:'18px',
+    marginRight:'5px'
+  },
+  text2:{
+    marginLeft: '0mm',
+    outline:0,
+    border:'none',
+    fontSize: '15px',
+    height: '30px',
+    width: '40vw',
+  },
+  ['@media screen and (min-width:421px) and (max-width : 768px)']:{
+    row1:{
+     
+    },
+    row2:{
+      
+    },
+    row3:{
+      
+    },
+    row4:{
+      
+    },
+    text2:{
+      
+    },
+    note3container:{
+      
+    },
+    box1:{
+      
+    },
+    row5:{
+      
+    },
+    row6:{
+      
+    },
+    row7:{
+      
+    },
+    row8:{
+      
+    },
+    row9:{
+      
+    },
+    row10:{
+      
+    }
+
   }
 })
 
@@ -99,6 +164,7 @@ export default function Takenote3(props) {
 
     archieveapi(archievobj).then((response) => {
       console.log(response)
+      props.getnotenew()
     }).catch((error) => {
       console.log(error)
     })
@@ -115,6 +181,7 @@ export default function Takenote3(props) {
     }).catch((error) => {
       console.log(error)
     })
+    props.getnotenew()
 
   }
 
@@ -143,37 +210,65 @@ export default function Takenote3(props) {
 
   return (
     <>
-      <Card variant="outlined" style={{marginTop:20,borderRadius:5,backgroundColor: props.note.color }}>
-        <Box className={classes.row2}>
+    <Grid container spacing={1}>
+      <Grid item xs={3}>
+      <Card variant="outlined" className={classes.note3container} style={{backgroundColor: props.note.color }}>
+     
+        <Box className={classes.row2} sx={{ flexGrow: 1 }}>
           <span onClick={() => handleOpen(props.note)}>{props.note.title}</span>
           <span onClick={() => handleOpen(props.note)}>{props.note.description}</span>
         </Box>
-        <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-          <AddAlertOutlinedIcon sx={{ marginTop: 5, marginLeft: 1 }} fontSize='small' />
-          <PersonAddAlt1OutlinedIcon sx={{ marginTop: 5, marginLeft: 2.5 }} fontSize='small' />
-           <ColorPoppup action='update' id={props.note.id} colorupdate={colorupdate} />
-          <DeleteOutlineOutlinedIcon sx={{ marginTop: 5, marginLeft: 2.5 }} fontSize='small' onClick={() => deletednote(props.note.id)} />
-           <ArchiveOutlinedIcon sx={{ marginTop: 5, marginLeft: 2.5 }} fontSize='small' onClick={() => updatearchieve(props.note.id)} />
-          <MoreVertOutlinedIcon sx={{ marginTop: 5, marginLeft: 2.5 }} fontSize='small' />
+        <Box className={classes.box1}>
+            <div className={classes.row9}>
+              <AddAlertOutlinedIcon fontSize='small' />
+            </div>
+            <div className={classes.row9}>
+              <PersonAddAlt1OutlinedIcon fontSize='small' />
+            </div>
+            <ColorPoppup action='update' id={props.note.id} colorupdate={colorupdate} />
+            <div className={classes.row10}>
+            <DeleteOutlineOutlinedIcon fontSize='small' onClick={() => deletednote(props.note.id)} />
+            </div>
+            <div className={classes.row10}>
+            <ArchiveOutlinedIcon fontSize='small' onClick={() => updatearchieve(props.note.id)} />
+            </div>
+            <div className={classes.row10}>
+            <MoreVertOutlinedIcon fontSize='small' />
+            </div>
+           
         </Box>
+        
         </Card>
-
-        <Modal open={open} onClose={handleClose}>
+        </Grid>
+        </Grid>
+        
+        
+        <Modal open={open} onClose={handleClose} >
         <Paper elevation={3}>
-          <Box sx={style} style={{ backgroundColor: props.note.color,borderRadius:8 }}> 
+          <Box sx={style} style={{ backgroundColor: props.note.color}}> 
             <div className={classes.row3}>
-              <input type={'text1'} defaultValue={updateNote.title} style={{backgroundColor:props.note.color}} onChange={newtitle}></input>
+              <input type={'text'} className={classes.text2}  defaultValue={updateNote.title} style={{backgroundColor:props.note.color}} onChange={newtitle}></input>
             </div>
-            <div className={classes.row4}>
-              <input type={'text2'} defaultValue={updateNote.description} style={{backgroundColor:props.note.color}} onChange={newdesc}></input>
+            <div className={classes.row4} style={{ backgroundColor: props.note.color}}>
+              <input type={'text'} className={classes.text2} defaultValue={updateNote.description} style={{backgroundColor:props.note.color}} onChange={newdesc}></input>
             </div>
-            <div style={{ display: 'flex', backgroundColor: '', alignItems: 'center', marginTop: 0 }}>
-              <AddAlertOutlinedIcon sx={{ marginTop: 5, marginLeft: 1, marginRight: 1 }} fontSize='small' />
-              <PersonAddAlt1OutlinedIcon sx={{ marginTop: 5, marginLeft: 3.5, marginRight: 1 }} fontSize='small' />
-              <ColorPoppup/>
-              <ArchiveOutlinedIcon sx={{ marginTop: 5, marginLeft: 3.5, marginRight: 1 }} fontSize='small' />
-              <MoreVertOutlinedIcon sx={{ marginTop: 5, marginLeft: 3.5, marginRight: 1 }} fontSize='small' />
-              <Button sx={{ marginTop: 5, marginLeft: 30, marginBottom: 0, color: 'black' }} variant="text" onClick={close}>Close</Button>
+            <div className={classes.row5} style={{ backgroundColor: props.note.color}}>
+              <div className={classes.row7}>
+                <AddAlertOutlinedIcon fontSize='small'/>
+              </div>
+              <div className={classes.row7}>
+              <PersonAddAlt1OutlinedIcon fontSize='small' />
+              </div>
+              <div className={classes.row7}>
+              <ArchiveOutlinedIcon  fontSize='small' />
+              </div>
+              <div className={classes.row7}>
+              <MoreVertOutlinedIcon fontSize='small' />
+              </div>
+              <div className={classes.row8}>
+              <Button  variant="text" onClick={close}>Close</Button>
+              </div>
+
             </div>
            </Box> 
            </Paper>
