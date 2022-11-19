@@ -19,6 +19,7 @@ import Card from '@mui/material/Card';
 import Paper from '@mui/material/Paper';
 import { makeStyles } from '@mui/styles';
 import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
 
 const useStyle = makeStyles({
   note3container:{
@@ -45,7 +46,8 @@ const useStyle = makeStyles({
   box1:{
     display: 'flex', 
     flexDirection: 'row', 
-    alignItems: 'center' 
+    alignItems: 'center', 
+    marginTop:'-20px'
   },
   row5:{
     display: 'flex',
@@ -208,10 +210,18 @@ export default function Takenote3(props) {
     setUpdateNote((prevstate) => ({ ...prevstate, description: e.target.value }))
   }
 
+  
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
   return (
     <>
-    <Grid container spacing={1}>
-      <Grid item xs={3}>
+    
       <Card variant="outlined" className={classes.note3container} style={{backgroundColor: props.note.color }}>
      
         <Box className={classes.row2} sx={{ flexGrow: 1 }}>
@@ -236,13 +246,9 @@ export default function Takenote3(props) {
             <MoreVertOutlinedIcon fontSize='small' />
             </div>
            
-        </Box>
-        
+        </Box>       
         </Card>
-        </Grid>
-        </Grid>
-        
-        
+
         <Modal open={open} onClose={handleClose} >
         <Paper elevation={3}>
           <Box sx={style} style={{ backgroundColor: props.note.color}}> 

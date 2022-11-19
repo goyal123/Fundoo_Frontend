@@ -48,7 +48,7 @@ export default function ColorPoppup(props) {
   const id = canBeOpen ? 'transition-popper' : undefined;
 
   return (
-    <div style={{marginTop:-7,marginLeft:-1,marginRight:1}}>
+    <div style={{marginTop:-6,marginLeft:-1,marginRight:1}}>
       <ColorLensOutlinedIcon sx={{marginTop:6,marginLeft:2.5}} fontSize='small' onClick={handleClick}/>
       <Popper id={id} open={open} anchorEl={anchorEl} transition>
         {({ TransitionProps }) => (

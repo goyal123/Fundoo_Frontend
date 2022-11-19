@@ -23,6 +23,7 @@ function App() {
           {/* <Loginpage_copy/>  */}
          {/* { <Register_copy/> }  */}
       </div>
+
       <Provider store={store}>
          {/* <Dashboard/> */}
          <Routerone/>

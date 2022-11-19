@@ -6,6 +6,8 @@ import Takenote2 from '../../Components/Takenote2'
 import Takenote3 from '../../Components/Takenote3'
 import { getNoteListApi } from '../../services/dataService'
 import Style from './dashboard.module.css'
+import { makeStyles } from '@mui/styles';
+import Grid from '@mui/material/Grid';
 
 
 export default function Dashboard() {
@@ -69,17 +71,26 @@ export default function Dashboard() {
 
   return (
     <div>
+       <Grid container spacing={1}>
+       <Grid item xs={12}>
         <Header listentoheader={listentoheader}/>
+       </Grid>
+       <Grid item xs={3}>
         <MiniDrawer drawerToggle={drawerToggle} listenToDrawer={listenToDrawer}/>
-       {/* <Headernew/> */}
+       </Grid>
+       
         {
-            noteSwitch ? <Takenote2 listentotakenote2={listentotakenote2}/> : <Takenote1 listentotakenote1={listentotakenote1}/>
+            noteSwitch ? <Grid item xs={4}> <Takenote2 listentotakenote2={listentotakenote2}/> </Grid> : <Grid item xs={4}> <Takenote1 listentotakenote1={listentotakenote1}/> </Grid>
         }
+        <Grid item xs={6}>
         <div className={Style.container}>
           { 
             note3List.map((note) => (<Takenote3 note={note} getnotenew={getnotenew}/>))
           }
         </div>
+        </Grid>
+        
+        </Grid>
         
     </div>
   )
