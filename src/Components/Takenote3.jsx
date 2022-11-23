@@ -142,29 +142,33 @@ const style = {
 
 
 export default function Takenote3(props) {
+  console.log("props = ",props)
   const classes = useStyle()   
   const [open, setOpen] = React.useState(false);
-  const [updateNote, setUpdateNote] = useState({ noteId: '', title: '', description: ''} )
+  const [updateNote, setUpdateNote] = useState({ noteId: '', title: '', description: '',color:''} )
   const handleOpen = (noteobj) => {
     console.log("noteobj in handleopen",noteobj)
     setOpen(true);
     setUpdateNote({
-      noteId: noteobj.id,
+      noteId: noteobj.noteID,
       title: noteobj.title,
       description: noteobj.description,
+      color:noteobj.color
 
     })
   }
   const handleClose = () => setOpen(false);
 
-  console.log(props.note)
+  //console.log(props.note)
   const updatearchieve = (id) => {
     let archievobj = {
-      noteIdList: [id],
-      isArchived: true
+      //noteIdList: [id],
+        noteId:[id]
+      //isArchived: true
+      //archieve:true
     }
 
-    archieveapi(archievobj).then((response) => {
+    archieveapi(id).then((response) => {
       console.log(response)
       props.getnotenew()
     }).catch((error) => {
@@ -175,10 +179,12 @@ export default function Takenote3(props) {
 
   const deletednote = (id) => {
     let deleteobj = {
-      noteIdList: [id],
-      isDeleted: true
+      //noteIdList: [id],
+      noteID:[id],
+      
+      //trash: true
     }
-    deletenoteapi(deleteobj).then((response) => {
+    deletenoteapi(id).then((response) => {
       console.log(response)
     }).catch((error) => {
       console.log(error)
@@ -235,12 +241,12 @@ const Item = styled(Paper)(({ theme }) => ({
             <div className={classes.row9}>
               <PersonAddAlt1OutlinedIcon fontSize='small' />
             </div>
-            <ColorPoppup action='update' id={props.note.id} colorupdate={colorupdate} />
+            <ColorPoppup action='update' id={props.note.noteID} colorupdate={colorupdate} />
             <div className={classes.row10}>
-            <DeleteOutlineOutlinedIcon fontSize='small' onClick={() => deletednote(props.note.id)} />
+            <DeleteOutlineOutlinedIcon fontSize='small' onClick={() => deletednote(props.note.noteID)} />
             </div>
             <div className={classes.row10}>
-            <ArchiveOutlinedIcon fontSize='small' onClick={() => updatearchieve(props.note.id)} />
+            <ArchiveOutlinedIcon fontSize='small' onClick={() => updatearchieve(props.note.noteID)} />
             </div>
             <div className={classes.row10}>
             <MoreVertOutlinedIcon fontSize='small' />

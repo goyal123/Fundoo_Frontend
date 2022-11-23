@@ -8,6 +8,7 @@ import { addcolorapi } from '../../services/dataService';
 
 
 export default function ColorPoppup(props) {
+  console.log("props in color popup = ",props)
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const colors = ["#2ECC71", "#AF7AC5", "#F1948A", "#A3E4D7", "#F5B7B1", "#F5B041", "#DC7633", "#F1C40F", "#AAB7B8", "#F1948A", "#2ECC71", "#F5B041"]
@@ -23,7 +24,7 @@ export default function ColorPoppup(props) {
                 noteIdList:[props.id],
                 color:colour
             }
-        console.log(colorobj)
+        console.log("colorobj = ",colorobj)
         addcolorapi(colorobj).then((response) => {
             console.log(response)
             props.colorupdate()
@@ -33,9 +34,6 @@ export default function ColorPoppup(props) {
 
         console.log(colour,"updateing color")
         }
-
-
-
   }
 
   const handleClick = (event) => {

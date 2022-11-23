@@ -80,8 +80,8 @@ const useStyle = makeStyles({
 export default function Takenote2(props) {
   const classes = useStyle()   
 
-  const [noteobj,setnoteObj] = useState({title:'' , description:'',color:'',isArchived:false})
-
+  const [noteobj,setnoteObj] = useState({title:'' , description:'',color:'',archieve:false,trash:false})
+  //const [noteobj,setnoteObj] = useState({title:'' , description:'',color:'',isArchived:false})
   const taketitle=(e) => {
     setnoteObj((prevstate) => ({...prevstate,title:e.target.value}))
   }
@@ -97,7 +97,8 @@ export default function Takenote2(props) {
   }
 
   const changearchieve=() => {
-    setnoteObj((prevstate) => ({...prevstate,isArchived:true}))
+    //setnoteObj((prevstate) => ({...prevstate,isArchived:true}))
+    setnoteObj((prevstate) => ({...prevstate,archieve:true}))
   }
 
   const submitnote=() => {
@@ -106,7 +107,7 @@ export default function Takenote2(props) {
     props.listentotakenote2()
     addnoteapi(noteobj).then((response) => {
       console.log(response)
-      props.getnote()
+      //props.getnotenew()
   }).catch((error) => {
       console.log(error)
   })

@@ -64,7 +64,8 @@ export default function Loginpage_copy() {
         if (emailTest === true && passwordTest === true) {
             loginapi(signinobj).then((response) => {
                 console.log(response)
-                localStorage.setItem("token",response.data.id)
+                //localStorage.setItem("token",response.data.id)
+                localStorage.setItem("token",response.data.data)
                 navigate('/dashboard')
             }).catch((error) => {
                 console.log(error)

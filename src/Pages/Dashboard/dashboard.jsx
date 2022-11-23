@@ -26,29 +26,31 @@ export default function Dashboard() {
 
     const getnotenew=() => {
       getNoteListApi().then((response) => {
+        console.log(response)
         let filterNote = [] 
         if(noteChoice==='Notes')
             {
-                filterNote = response.data.data.data.filter((notes) => {
-                    if(notes.isArchived===false && notes.isDeleted===false)
+                filterNote = response.data.data.filter((notes) => {
+                    if(notes.archieve===false && notes.trash===false)
                     return notes
                 })
             }
             else if (noteChoice==='Archive')
             {
-                filterNote = response.data.data.data.filter((notes) => {
-                    if(notes.isArchived===true && notes.isDeleted===false)
+                filterNote = response.data.data.filter((notes) => {
+                    if(notes.archieve===true && notes.trash===false)
                     return notes
                 })
             }
             else if (noteChoice==='Trash')
             {
-                filterNote = response.data.data.data.filter((notes) => {
-                    if(notes.isArchived===false && notes.isDeleted===true)
+                filterNote = response.data.data.filter((notes) => {
+                    if(notes.archieve===false && notes.trash===true)
                     return notes
                 })
             }
-        console.log("getnote",response)
+            
+        //console.log("getnote",response)
         // setNote3List(response.data.data.data)
         setNote3List(filterNote)
       }).catch((error) => {
